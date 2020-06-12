@@ -43,7 +43,7 @@ body{
   margin: 0;
   font-size: 2rem;
   line-height: 2;
-
+  font-family: 'Montserrat'
 }
 a{
   text-decoration: none;

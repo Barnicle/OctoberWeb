@@ -1,10 +1,4 @@
-import Link from 'next/link';
-
 const Home = () => {
-  return (
-    <div>
-      <p>HOME</p>
-    </div>
-  );
+  return <div>{this.props.children}</div>;
 };
 export default Home;

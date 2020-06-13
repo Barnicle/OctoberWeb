@@ -3,20 +3,22 @@ import { connect } from "react-redux";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import { theme, GlobalStyle } from "./styles/theme";
 import { fetchData } from "../src/actions";
-
 import Header from "./Header";
 import Meta from "./Meta";
 import Main from "./Main";
+import Footer from "./Footer";
 const StyledPage = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 80px 1fr 1fr;
+  grid-template-rows: 80px 1fr 240px;
   grid-template-areas: "HEADER" "MAIN" "FOOTER";
+  justify-content: center;
+  align-items: center;
 `;
 
 class Page extends Component {
   componentDidMount = () => {
-    // this.props.dispatch(fetchData());
+    this.props.dispatch(fetchData());
   };
   render() {
     return (
@@ -26,6 +28,7 @@ class Page extends Component {
           <Meta />
           <Header />
           <Main />
+          <Footer />
         </StyledPage>
       </ThemeProvider>
     );

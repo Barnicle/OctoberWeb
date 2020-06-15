@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import Logo from '../public/Logo.svg';
 
 const StyledHeader = styled.header`
+  width: 100%;
+  min-width: 320px;
   box-shadow: ${(props) => props.theme.colors.smallShadow};
   grid-area: HEADER;
   @media (max-width: 425px) {
@@ -9,14 +11,14 @@ const StyledHeader = styled.header`
   }
 `;
 const NavLink = styled.a`
-  color: ${(props) => props.theme.colors.blue};
+  color: ${(props) => props.theme.colors.basicBlue};
   font-size: ${(props) => (props.small ? '18px' : '20px')};
   padding: 1rem;
   white-space: nowrap;
-  font-weight: 600;
-  line-height: 22px;
+  font-weight: 800;
+  line-height: 160%;
   grid-area: 'NAVLINK';
-  @media (max-width: 425px) {
+  @media (max-width: 768px) {
     display: none;
   }
 `;
@@ -27,11 +29,12 @@ const StyledNav = styled.nav`
   grid-template-areas: 'LOGO' 'NAVBAR' 'NAVLINK';
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 10rem 1rem 10rem;
+
   .navbar {
     grid-area: 'NAVBAR';
   }
-  @media (max-width: 425px) {
+  @media (max-width: 768px) {
     grid-template-columns: auto;
     grid-template-areas: 'LOGO';
     .navbar {
@@ -49,10 +52,16 @@ const Header = () => {
         <StyledNav>
           <StyledLogo />
           <div className="navbar">
-            <NavLink small>Текстовые блоки</NavLink>
-            <NavLink small>Галерея</NavLink>
+            <NavLink hide href="static_blocks" small>
+              Текстовые блоки
+            </NavLink>
+            <NavLink hide href="#gallery" small>
+              Галерея
+            </NavLink>
           </div>
-          <NavLink>👋 Форма с приветами</NavLink>
+          <NavLink hide href="#form">
+            👋 Форма с приветами
+          </NavLink>
         </StyledNav>
       </StyledHeader>
     </React.Fragment>

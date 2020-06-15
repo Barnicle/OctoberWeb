@@ -1,5 +1,5 @@
-import { Provider } from "react-redux";
-import { useStore } from "../src/store";
+import { Provider } from 'react-redux';
+import { useStore } from '../src/store';
 
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState);

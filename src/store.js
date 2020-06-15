@@ -1,7 +1,7 @@
-import { useMemo } from "react";
-import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import thunkMiddleware from "redux-thunk";
+import { useMemo } from 'react';
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunkMiddleware from 'redux-thunk';
 let store;
 
 const initialState = {
@@ -9,9 +9,23 @@ const initialState = {
 };
 
 const reducer = (state = initialState, action) => {
+  let form;
   switch (action.type) {
-    case "FETCHED":
-      return { ...action.data };
+    case 'PHONE_IS_VALID':
+      form = { ...state.form, phone: true };
+      return { ...state, form };
+    case 'EMAIL_IS_VALID':
+      form = { ...state.form, email: true };
+      return { ...state, form };
+    case 'TEXTARIA_IS_VALID':
+      form = { ...state.form, text: true };
+      return { ...state, form };
+    case 'FORM_IS_VALID':
+      form = { ...state.form, isValid: true };
+      return { ...state, form };
+    case 'CHECKBOX_IS_VALID':
+      form = { ...state.form, checkBox: true };
+      return { ...state, form };
     default:
       return state;
   }
@@ -37,7 +51,7 @@ export const initializeStore = (preloadedState) => {
     store = undefined;
   }
 
-  if (typeof window === "undefined") return _store;
+  if (typeof window === 'undefined') return _store;
   //Создает store один раз на клиенте
   if (!store) store = _store;
 
@@ -49,4 +63,5 @@ export function useStore(initialState) {
   return store;
 }
 
-export const getData = (state) => state;
+export const getData = (state) => state.data;
+export const getFormData = (state) => state.form;

@@ -1,25 +1,23 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import { theme, GlobalStyle } from "./styles/theme";
-import { fetchData } from "../src/actions";
-import Header from "./Header";
-import Meta from "./Meta";
-import Main from "./Main";
-import Footer from "./Footer";
+import React, { Component } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import { theme, GlobalStyle } from './styles/theme';
+import Header from './Header';
+import Meta from './Meta';
+import Main from './Main';
+import Footer from './Footer';
+
 const StyledPage = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 80px 1fr 240px;
-  grid-template-areas: "HEADER" "MAIN" "FOOTER";
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: auto;
+  grid-template-rows: 80px 1fr auto;
+  min-width: 300px;
+  grid-template-areas: 'HEADER' 'MAIN' 'FOOTER';
+  @media (max-width: 425px) {
+    grid-template-rows: 40px 1fr auto;
+  }
 `;
 
 class Page extends Component {
-  componentDidMount = () => {
-    this.props.dispatch(fetchData());
-  };
   render() {
     return (
       <ThemeProvider theme={theme}>
@@ -35,4 +33,4 @@ class Page extends Component {
   }
 }
 
-export default connect()(Page);
+export default Page;

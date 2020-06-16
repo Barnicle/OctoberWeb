@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+Чтобы запустить проект введите в терминале 'npm run dev', проект появится на 'localhost:3000'

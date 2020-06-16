@@ -52,7 +52,7 @@ const Header = () => {
         <StyledNav>
           <StyledLogo />
           <div className="navbar">
-            <NavLink hide href="static_blocks" small>
+            <NavLink hide href="#static_blocks" small>
               Текстовые блоки
             </NavLink>
             <NavLink hide href="#gallery" small>

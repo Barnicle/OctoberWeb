@@ -11,21 +11,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   let form;
   switch (action.type) {
-    case 'PHONE_IS_VALID':
-      form = { ...state.form, phone: true };
-      return { ...state, form };
-    case 'EMAIL_IS_VALID':
-      form = { ...state.form, email: true };
-      return { ...state, form };
-    case 'TEXTARIA_IS_VALID':
-      form = { ...state.form, text: true };
-      return { ...state, form };
-    case 'FORM_IS_VALID':
-      form = { ...state.form, isValid: true };
-      return { ...state, form };
-    case 'CHECKBOX_IS_VALID':
-      form = { ...state.form, checkBox: true };
-      return { ...state, form };
     default:
       return state;
   }

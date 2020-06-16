@@ -14,13 +14,6 @@ export async function getStaticProps() {
     props: {
       initialReduxState: {
         data,
-        form: {
-          phone: false,
-          email: false,
-          text: false,
-          checkBox: false,
-          isValid: false,
-        },
       },
     },
   };

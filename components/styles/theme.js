@@ -50,6 +50,7 @@ body{
 
 ul,ol{
   list-style: none;
+  max-width: 80%;
 }
 ol{
   counter-reset: num;
@@ -82,28 +83,47 @@ ol{
 blockquote{
 border-left: 4px solid ${theme.colors.basicBlue};
 padding-left: 4rem;
+max-width: 900px;
 }
 a{
   color: ${theme.colors.black};
+  text-decoration: none;
 }
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
+  width: 1000px;
+ font-size: 16px;
 }
+td{
+  height: 200px;
+  width: 200px;
+}
+
+
 thead tr{
 border-bottom: 2px solid ${theme.colors.basicBlue};
-padding: 1rem;
+/* padding: 1rem; */
 }
 tr{
-width: 1000px;
 border-bottom: 2px solid ${theme.colors.lightGrey};
-
 vertical-align: top;
 }
 
-tr :last-child {
+tbody tr :first-child, tbody tr :last-child  {
  padding-left: 30px;
+ width: 200px;
+ height: 200px;
+ @media (max-width: 500px) {
+    h1 {
+      font-size: 32px;
+    }
+    h2 {
+      font-size: 26px;
+    }
+    p {
+      font-size: 18px;
+    }
+ }
 }
 `;

@@ -15,6 +15,11 @@ const MainWrapper = styled.div`
   min-width: 320px;
   width: 100%;
   margin: 0 auto;
+  @media (min-width: 1024px) {
+    p {
+      max-width: 70%;
+    }
+  }
 `;
 const mapsStateToProps = (state) => {
   return {

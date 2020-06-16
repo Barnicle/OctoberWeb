@@ -69,6 +69,7 @@ const Form = () => {
             onChange={() => handleValid()}
             type={'name'}
             id={'name'}
+            name={'name'}
             placeholder={'Ваша имя'}
           />
           <StyledInputMask
@@ -76,6 +77,7 @@ const Form = () => {
             type={'text'}
             id="phone"
             mask
+            name={'phone'}
             required
             ref={register({
               required: 'Required',
@@ -87,6 +89,7 @@ const Form = () => {
           <StyledInputMask
             type={'email'}
             required
+            name={'email'}
             ref={register({
               required: 'Required',
               pattern: {
@@ -100,6 +103,7 @@ const Form = () => {
           />
           <StyledInputMask
             required
+            name={'textaria'}
             onChange={() => handleValid()}
             type={'text'}
             id="textaria"
@@ -114,6 +118,7 @@ const Form = () => {
                 id="textaria"
                 type="checkbox"
                 required
+                name={'checkbox'}
               />
               <span className="checkmark"></span>
             </label>

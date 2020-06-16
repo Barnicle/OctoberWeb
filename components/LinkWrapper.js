@@ -9,8 +9,10 @@ export const LinkWrapper = styled.div`
   align-items: center;
   background: ${(props) => props.theme.colors.yellow};
   border-radius: 8px;
-  width: 80rem;
-  padding: 2rem;
+  max-width: ${(props) => (props.smallWidth ? '60rem' : '110rem')};
+  padding: 1.5rem;
+  text-decoration: underline;
+
   cursor: pointer;
   :active {
     ::after {
@@ -22,20 +24,23 @@ export const LinkWrapper = styled.div`
     }
   }
   @media (max-width: 768px) {
-    width: 100%;
-
+    width: 90%;
+    margin: 0 auto;
     flex-flow: wrap;
     word-break: break-all;
     a {
-      max-width: 500px;
+      max-width: 51rem;
+    }
+  }
+  @media (max-width: 600px) {
+    a {
+      max-width: 41rem;
     }
   }
   @media (max-width: 425px) {
-    width: 100%;
-
     align-items: flex-start;
     a {
-      max-width: 250px;
+      max-width: 26rem;
     }
   }
 `;
